@@ -1,0 +1,69 @@
+/* Gradient Background for Section */
+.gradient-custom-3 {
+  /* Fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 0.5),
+    rgba(143, 211, 244, 0.5)
+  );
+}
+
+/* Gradient Background for Button */
+.gradient-custom-4 {
+  /* Fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(132, 250, 176, 1),
+    rgba(143, 211, 244, 1)
+  );
+}
+
+/* Full viewport height for the section */
+.vh-100 {
+  height: 100vh; /* Full viewport height */
+}
+
+/* Card container - ensure it fills the container but doesn't overflow */
+.card {
+  height: 100%; /* Make the card take up full height of its container */
+  display: flex;
+  flex-direction: column; /* Stack the form and other content vertically */
+}
+
+/* Card Body: Adjust padding and allow content to grow */
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow card body content to expand to fill available space */
+}
+
+/* Button: Make sure the button stays at the bottom of the card */
+button {
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+/* Ensure the checkbox cursor is pointer */
+#form2Example3cg {
+  cursor: pointer;
+}

@@ -1,0 +1,110 @@
+<div class="row">
+  <div [ngClass]="isSidePanelVisible ? 'col-8' : 'col-12'">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">Category List</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-success" (click)="openSidePanel()">
+              New
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body m-2">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center">Sr No</th>
+              <th class="text-center">Category ID</th>
+              <th class="text-center">Category Name</th>
+              <th class="text-center">ParentCategory Id</th>
+              <th class="text-center">Action</th>
+              <th class="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categoryList; let index = index">
+              <td class="text-center">{{ index + 1 }}</td>
+              <td class="text-center">{{ category.categoryId }}</td>
+              <td class="text-center">{{ category.categoryName }}</td>
+              <td class="text-center">{{ category.parentCategoryId }}</td>
+              <td class="text-center">
+                <a class="btn btn-primary" (click)="onEdit(category)">Edit</a>
+              </td>
+              <td class="text-center">
+                <a
+                  class="btn btn-danger"
+                  (click)="onDelete(category.categoryId)"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4" *ngIf="isSidePanelVisible">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <div class="row">
+          <div class="col-6">New Category</div>
+          <div class="col-6 text-end">
+            <button class="btn btn-sm btn-success" (click)="closeSidePanel()">
+              closed
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">CategoryName</label>
+            <input
+              type="text"
+              [(ngModel)]="categoryObj.categoryName"
+              class="form-control"
+            />
+          </div>
+          <div class="col-6">
+            <label for="">parentCategoryId</label>
+            <input
+              type="text"
+              [(ngModel)]="categoryObj.parentCategoryId"
+              class="form-control"
+            />
+          </div>
+
+          <div class="row pt-2">
+            <div class="col-6 text-center">
+              <button
+                class="btn btn-success"
+                (click)="reset(categoryObj.categoryId)"
+              >
+                Rest
+              </button>
+            </div>
+            <div class="col-6 text-center">
+              <button
+                class="btn btn-success"
+                *ngIf="categoryObj.categoryId == 0"
+                (click)="OnSave()"
+              >
+                Create Product
+              </button>
+              <button
+                class="btn btn-primary"
+                *ngIf="categoryObj.categoryId !== 0"
+                (click)="OnUpdate()"
+              >
+                Update Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
