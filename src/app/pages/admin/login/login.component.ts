@@ -7,7 +7,7 @@ import { AuthUserService } from '../../../services/auth-user.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,RouterLink],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -29,4 +29,6 @@ export class LoginComponent {
       console.log(this.loginObj.username, '&', this.loginObj.password);
     }
   }
+
+ 
 }
